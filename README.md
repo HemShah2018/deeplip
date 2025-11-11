@@ -1,5 +1,19 @@
 # Deep Lip Reading Project
 
+<div align="center">
+
+**An end-to-end deep learning project for lip reading from video**
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-orange.svg)](https://www.tensorflow.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+*Designed for accessibility applications*
+
+</div>
+
+---
+
 An end-to-end deep learning project for lip reading from video, designed for accessibility applications. This project implements a Conv3D + Bidirectional LSTM + CTC architecture similar to LipNet, capable of transcribing speech from mouth region video clips.
 
 ## Overview
@@ -11,6 +25,36 @@ This project builds a machine learning model that can read lips from video seque
 
 ## Architecture
 
+### Model Pipeline
+
+```
+Video Input (75 frames)
+    ↓
+[Mouth Region Extraction]
+    ↓
+[Grayscale + Normalization]
+    ↓
+Conv3D Block 1 (128 filters) → MaxPool3D
+    ↓
+Conv3D Block 2 (256 filters) → MaxPool3D
+    ↓
+Conv3D Block 3 (75 filters) → MaxPool3D
+    ↓
+TimeDistributed Flatten
+    ↓
+Bidirectional LSTM (128 units) → Dropout (0.5)
+    ↓
+Bidirectional LSTM (128 units) → Dropout (0.5)
+    ↓
+Dense Layer (Softmax, vocab_size + 1)
+    ↓
+CTC Decoding
+    ↓
+Predicted Text
+```
+
+### Architecture Details
+
 The model architecture consists of:
 1. **Input**: Video clips of shape `[batch, 75, H, W, 1]` (75 frames, grayscale mouth region)
 2. **Conv3D Blocks**: Three 3D convolutional layers with MaxPool3D to extract features
@@ -19,7 +63,32 @@ The model architecture consists of:
 5. **Dropout**: Regularization (0.5 rate)
 6. **Dense Output**: Softmax layer with `vocab_size + 1` outputs (characters + CTC blank token)
 
-Total parameters: ~8-9 million
+**Total parameters**: ~8-9 million
+
+### Visual Architecture Diagram
+
+<div align="center">
+  <img src="docs/architecture.png" alt="Architecture Diagram" width="800"/>
+</div>
+
+**Interactive Mermaid Diagram:**
+```mermaid
+graph TD
+    A[Video Input<br/>75 frames × 46×140] --> B[Conv3D Block 1<br/>128 filters]
+    B --> C[MaxPool3D]
+    C --> D[Conv3D Block 2<br/>256 filters]
+    D --> E[MaxPool3D]
+    E --> F[Conv3D Block 3<br/>75 filters]
+    F --> G[MaxPool3D]
+    G --> H[TimeDistributed<br/>Flatten]
+    H --> I[Bidirectional LSTM<br/>128 units]
+    I --> J[Dropout 0.5]
+    J --> K[Bidirectional LSTM<br/>128 units]
+    K --> L[Dropout 0.5]
+    L --> M[Dense + Softmax<br/>vocab_size + 1]
+    M --> N[CTC Decoding]
+    N --> O[Predicted Text]
+```
 
 ## Project Structure
 
@@ -184,7 +253,27 @@ The training script automatically configures GPU memory growth to avoid OOM erro
 
 This project is designed for accessibility applications. Please ensure you have appropriate permissions for any datasets used.
 
+## Demo / Example
+
+*Add a screenshot or GIF here showing the model in action*
+
+Example visualization of preprocessed mouth region:
+```python
+from src.visualize import visualize_preprocessed_clip
+visualize_preprocessed_clip("data/S1/video1.mp4", "docs/demo.gif")
+```
+
 ## Acknowledgments
 
 This implementation is inspired by LipNet and similar lip-reading architectures, adapted for the GRID dataset format.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for accessibility applications**
+
+[Report Bug](https://github.com/zaydabash/deeplip/issues) · [Request Feature](https://github.com/zaydabash/deeplip/issues) · [Documentation](README.md)
+
+</div>
 
